@@ -10,7 +10,7 @@ schema and change the version number and create migration class to change databa
 */
 @Database(
     entities = [Quiz::class],
-    version = 1
+    version = 2
 )
 abstract class QuizDatabase():RoomDatabase() {
     abstract fun getDao() : QuizDAO
@@ -31,7 +31,7 @@ abstract class QuizDatabase():RoomDatabase() {
         private fun buildDatabase(context: Context) = Room.databaseBuilder(
             context.applicationContext,
             QuizDatabase::class.java,
-            "quizdatabase"
+            "QUIZ"
         ).build()
     }
 }

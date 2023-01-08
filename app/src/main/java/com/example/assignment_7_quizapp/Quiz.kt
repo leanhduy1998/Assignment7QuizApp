@@ -8,26 +8,12 @@ import androidx.room.PrimaryKey
 @Entity
 data class Quiz(
     @PrimaryKey(autoGenerate = true)
+    val id:Int,
     val question :String,
-    val answers :Array<String>,
+    val answer1 :String,
+    val answer2 :String,
+    val answer3 :String,
+    val answer4 :String,
+    var answer: String = "",
     var correctAnswer: String,
-    var correct: Boolean
-) {
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
-        if (javaClass != other?.javaClass) return false
-
-        other as Quiz
-
-        if (question != other.question) return false
-        if (!answers.contentEquals(other.answers)) return false
-
-        return true
-    }
-
-    override fun hashCode(): Int {
-        var result = question.hashCode()
-        result = 31 * result + answers.contentHashCode()
-        return result
-    }
-}
+)
