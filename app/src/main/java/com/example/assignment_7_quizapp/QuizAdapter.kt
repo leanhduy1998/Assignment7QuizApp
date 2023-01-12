@@ -29,6 +29,13 @@ class QuizAdapter(private val quizes: List<Quiz>, val context: Context) :
         holder.answer3.text = quizes[position].answer3
         holder.answer4.text = quizes[position].answer4
 
+        if (quizes[position].answer.isNotEmpty()) {
+            if (quizes[position].answer1 == quizes[position].correctAnswer) {
+
+            }
+        }
+
+
         holder.radioGroup.setOnCheckedChangeListener { group, id ->
             CoroutineScope(Dispatchers.Main).launch {
                 context?.let{
