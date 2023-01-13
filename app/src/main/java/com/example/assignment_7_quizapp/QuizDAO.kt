@@ -12,4 +12,6 @@ interface QuizDAO {
     suspend fun add(quiz: Quiz)
     @Query("SELECT * FROM QUIZ")
     suspend fun getAll(): List<Quiz>
+    @Query("DELETE FROM QUIZ")
+    suspend fun removeAll()
 }

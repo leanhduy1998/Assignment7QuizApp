@@ -14,6 +14,6 @@ data class Quiz(
     val answer2 :String,
     val answer3 :String,
     val answer4 :String,
-    var answer: String = "",
     var correctAnswer: String,
+    var answer: String = "",
 )
